@@ -1,6 +1,3 @@
-
-# Your code goes here
-
 from solution import Bank, BankAccount, Person
 
 def main():
@@ -21,7 +18,7 @@ def main():
 
     # Merge accounts if they belong to the same person
     account3 = bank.create_bank_account(account_holder="John Doe", initial_balance=2000)
-    account1.merge_account(account3)
+    account1.merge_account(account3, bank)  # Pass the bank instance
 
     # Add an existing account to the bank
     bank.add_bank_account(account2)
@@ -44,7 +41,6 @@ def main():
 
     # Display total balance for the person
     print(f"Total balance for {person.first_name} {person.last_name}: ${person.get_total_balance()}")
-
 
 if __name__ == "__main__":
     main()
